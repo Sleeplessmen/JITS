@@ -2,12 +2,12 @@ import Section01 from "./Section01";
 
 // Add mock fetch in a decorator
 const mockFetchDecorator = (Story) => {
-    global.fetch = () =>
+    window.fetch = () =>
         Promise.resolve({
             json: () => Promise.resolve({ message: "Mocked API response!" }),
         });
 
-    return <Story />;
+    return Story();
 };
 
 export default {
