@@ -1,5 +1,8 @@
 .container {
+    /* outline: 1px solid red; */
     display: flex;
+    flex: 1;
+    flex-direction: row;
     align-items: flex-start;
     min-height: 100vh;
 }

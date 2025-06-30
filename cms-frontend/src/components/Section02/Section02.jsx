@@ -1,4 +1,4 @@
-import ProductList from "./ProductList";
+import ProductList from "./ProductLis";
 import Sidebar from "./Sidebar";
 import styles from "./Section02.module.css";
 
