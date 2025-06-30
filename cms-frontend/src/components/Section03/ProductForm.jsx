@@ -15,7 +15,7 @@ export default function ProductForm({ onAddProduct }) {
 
     return (
         <div className={styles.productForm}>
-            <h2>Product Form</h2>
+            <h2>Add Product Form</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="productName">Product Name:</label>

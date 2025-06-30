@@ -9,7 +9,7 @@ export default function ProductLis() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.heading}>Products</h2>
+            <h2 className={styles.heading}>Product List</h2>
             <table className={styles.table}>
                 <thead>
                     <tr>
