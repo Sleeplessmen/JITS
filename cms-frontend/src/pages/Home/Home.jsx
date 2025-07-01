@@ -1,20 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 
 export default function Home() {
-    const sections = Array.from({ length: 10 }, (_, i) => {
-        const num = String(i + 1).padStart(2, "0");
-        return (
-            <li key={num}>
-                <Link to={`/section${num}`}>Practice Exercise {num}</Link>
-            </li>
-        );
-    });
+    const navigate = useNavigate();
 
     return (
-        <div className={styles.homeContent}>
-            <h2>Mục lục</h2>
-            <ol>{sections}</ol>
+        <div className={styles.homeBox}>
+            <h2>Welcome to the Practice Hub</h2>
+            <p>This is a collection of 10 practice exercises to improve my Node.js, React.js and framework Sails.js skills.</p>
+            <button onClick={() => navigate("/section01")} className={styles.startButton}>
+                Start
+            </button>
         </div>
     );
 }
