@@ -16,6 +16,12 @@ module.exports = {
       required: true,
       min: 0,
     },
+    description: {
+      type: 'string',
+    },
   },
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+  timestamps: true,
 };
 
