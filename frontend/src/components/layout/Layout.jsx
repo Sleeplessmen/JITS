@@ -54,7 +54,7 @@ export default function Layout() {
             </main>
 
             <footer className="footer">
-                © 2025 Sleeplessmen
+                © 2025 Nguyen Cong Khai
             </footer>
         </div>
     );

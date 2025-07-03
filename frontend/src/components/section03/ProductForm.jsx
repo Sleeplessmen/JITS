@@ -12,6 +12,7 @@ export default function ProductForm({ onAddProduct }) {
         onAddProduct(newProduct);
         setName("");
         setPrice("");
+        setDescription("");
     }
 
     return (

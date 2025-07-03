@@ -14,7 +14,17 @@ export async function fetchProducts() {
     return res.data.data || [];
 }
 
-export async function addProduct(product) {
-    const res = await api.post("/products", product);
+export async function addProduct(newProduct) {
+    const res = await api.post("/products", newProduct);
+    return res.data.data;
+}
+
+export async function updateProduct(productId, updates) {
+    const res = await api.put(`/products/${productId}`, updates);
+    return res.data.data;
+}
+
+export async function deleteProduct(productId) {
+    const res = await api.delete(`/products/${productId}`);
     return res.data.data;
 }
