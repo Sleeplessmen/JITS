@@ -41,7 +41,26 @@ input {
 input:focus {
     outline: none;
     border-color: #2563eb;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+textarea {
+    max-width: 500px;
+    min-height: 200px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
 }
 
 button {

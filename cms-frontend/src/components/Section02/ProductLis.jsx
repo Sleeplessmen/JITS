@@ -9,13 +9,13 @@ export default function ProductLis() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.heading}>Product List</h2>
+            <h2 className={styles.heading}>Mock Product List</h2>
             <table className={styles.table}>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Price ($)</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,7 +23,7 @@ export default function ProductLis() {
                         <tr key={product.id}>
                             <td>{product.id}</td>
                             <td>{product.name}</td>
-                            <td>${product.price}</td>
+                            <td>{product.price}$</td>
                         </tr>
                     ))}
                 </tbody>

@@ -1,5 +1,6 @@
 import styles from './ProductList.module.css';
 export default function ProductList({ products }) {
+
     return (
         products.length === 0 ? (
             <div className={styles.noProducts}>
@@ -15,15 +16,17 @@ export default function ProductList({ products }) {
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Price ($)</th>
+                                <th>Price</th>
+                                <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
                             {products.map((product) => (
                                 <tr key={product.id}>
                                     <td>{product.id}</td>
-                                    <td>{product.name}</td>
-                                    <td>${product.price}</td>
+                                    <td>{product.name || 'No name available'}</td>
+                                    <td>{product.price + "$" || 'No price available'}</td>
+                                    <td>{product.description || 'No description available'}</td>
                                 </tr>
                             ))}
                         </tbody>

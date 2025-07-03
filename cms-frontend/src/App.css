@@ -4,6 +4,8 @@
     min-height: 100vh;
     background-color: white;
     font-family: sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .header {
@@ -75,9 +77,13 @@
 .main {
     display: flex;
     flex: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer {
+    width: 100%;
     padding: 20px;
     border-top: 1px solid #ddd;
     margin-top: auto;
