@@ -1,4 +1,6 @@
 // // src/api/axios.js
+// This file sets up an Axios instance for making API requests.
+// It includes a base URL and an interceptor to add an authorization token if available.
 // import axios from 'axios';
 
 // const api = axios.create({

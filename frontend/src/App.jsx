@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Section01 from "./components/section01/Section01";
-import Section02 from "./components/section02/Section02";
-import Section03 from "./components/section03/Section03";
-import Section04 from "./components/section04/Section04";
+import Section01 from "./pages/section01/Section01";
+import Section02 from "./pages/section02/Section02";
+import Section03 from "./pages/section03/Section03";
+import Section04 from "./pages/section04/Section04";
 import './App.css';
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home/Home";

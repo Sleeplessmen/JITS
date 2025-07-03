@@ -1,6 +1,6 @@
-import styles from './ProductLis.module.css';
+import styles from './ProductList.module.css';
 
-export default function ProductLis() {
+export default function ProductList() {
     const products = [
         { id: 1, name: "Laptop", price: 1000 },
         { id: 2, name: "Phone", price: 500 },
