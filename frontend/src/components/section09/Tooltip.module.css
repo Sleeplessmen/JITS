@@ -1,0 +1,22 @@
+.tooltipWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #222;
+    border: 1px solid #bbb;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: pre-line;
+    font-size: 0.95rem;
+    z-index: 10;
+    opacity: 0.98;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+}

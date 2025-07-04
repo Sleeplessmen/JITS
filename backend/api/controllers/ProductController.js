@@ -45,31 +45,31 @@ module.exports = {
     },
     create: async function (req, res) {
         try {
-            const { name, price } = req.body;
-            if (!name || !price) {
+            const { name, price, description } = req.body;
+            if (!name || !price || !description) {
                 return res.status(400).json({
-                    sucess: false,
-                    message: 'Name and price are required'
+                    success: false,
+                    message: 'Name, price, and description are required'
                 });
             }
             if (typeof price !== 'number' || price < 0) {
                 return res.status(400).json({
-                    sucess: false,
+                    success: false,
                     message: 'Price must be a non-negative number'
                 });
             }
             const existingProduct = await Product.findOne({ name });
             if (existingProduct) {
                 return res.status(400).json({
-                    sucess: false,
+                    success: false,
                     message: 'Product with this name already exists'
                 });
             }
 
-            const newProduct = await Product.create({ name, price }).fetch();
+            const newProduct = await Product.create({ name, price, description }).fetch();
 
             return res.status(201).json({
-                sucess: true,
+                success: true,
                 message: 'Product created successfully',
                 data: newProduct
             });
@@ -80,18 +80,9 @@ module.exports = {
             });
         }
     },
-    // This method updates a product by its ID.
-    // It allows updating either the name or the price, or both.
-    // If neither is provided, it returns a 400 error.
-    // If the product does not exist, it returns a 404 error.
-    // If the price is provided, it must be a non-negative number.
-    // If the name is provided, it must be a non-empty string.
-    // If the update is successful, it returns the updated product.
-    // If an error occurs, it returns a 500 error with the error message.
     update: async function (req, res) {
         try {
-
-            const { name, price } = req.body;
+            const { name, price, description } = req.body;
 
             const existingProduct = await Product.findOne({ id: req.params.id });
             if (!existingProduct) {
@@ -103,11 +94,12 @@ module.exports = {
 
             const isNameValid = typeof name === 'string' && name.trim() !== '';
             const isPriceValid = price !== undefined;
+            const isDescriptionValid = typeof description === 'string' && description.trim() !== '';
 
-            if (!isNameValid && !isPriceValid) {
+            if (!isNameValid && !isPriceValid && !isDescriptionValid) {
                 return res.status(400).json({
                     success: false,
-                    message: 'At least one valid field (name or price) must be provided for update'
+                    message: 'At least one valid field (name, price, or description) must be provided for update'
                 });
             }
 
@@ -127,7 +119,18 @@ module.exports = {
                 updatedFields.price = price;
             }
 
+            if (isDescriptionValid) {
+                updatedFields.description = description.trim();
+            }
+
             const updatedProduct = await Product.updateOne({ id: req.params.id }).set(updatedFields);
+
+            if (!updatedProduct) {
+                return res.status(404).json({
+                    success: false,
+                    message: 'Product not found'
+                });
+            }
 
             return res.json({
                 success: true,

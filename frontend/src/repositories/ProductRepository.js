@@ -6,6 +6,11 @@ const ProductRepository = {
         return res.data.data || [];
     },
 
+    async fetchOne(productId) {
+        const res = await api.get(`/products/${productId}`);
+        return res.data.data;
+    },
+
     async create(newProduct) {
         const res = await api.post("/products", newProduct);
         return res.data.data;

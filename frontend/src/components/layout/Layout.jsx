@@ -4,6 +4,16 @@ import { Link, Outlet } from "react-router-dom";
 export default function Layout() {
     const [open, setOpen] = useState(false);
     const menuRef = useRef(null);
+    const [lastVisit, setLastVisit] = useState(null);
+
+    // Lưu và lấy thời gian truy cập gần nhất
+    useEffect(() => {
+        const prevVisit = localStorage.getItem("lastVisit");
+        setLastVisit(prevVisit);
+
+        const now = new Date().toLocaleString();
+        localStorage.setItem("lastVisit", now);
+    }, []);
 
     // Close on outside click
     useEffect(() => {
@@ -17,7 +27,7 @@ export default function Layout() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const sections = Array.from({ length: 10 }, (_, i) => {
+    const sections = Array.from({ length: 9 }, (_, i) => {
         const num = String(i + 1).padStart(2, '0');
         return (
             <li key={num}>
@@ -55,6 +65,12 @@ export default function Layout() {
 
             <footer className="footer">
                 © 2025 Nguyen Cong Khai
+                <br />
+                {lastVisit && (
+                    <span>
+                        Last visited: {lastVisit}
+                    </span>
+                )}
             </footer>
         </div>
     );

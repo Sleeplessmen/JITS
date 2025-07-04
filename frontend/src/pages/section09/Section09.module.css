@@ -1,0 +1,32 @@
+.container {
+    max-width: 600px;
+    margin: 32px auto;
+    font-size: 1.1rem;
+}
+
+.heading {
+    margin-bottom: 24px;
+}
+
+.problemBlock {
+    margin-bottom: 32px;
+}
+
+.problemTitle {
+    margin-bottom: 8px;
+}
+
+.footerLink {
+    font-weight: bold;
+    background: #ffe082;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.devtoolsLink {
+    color: #1976d2;
+    text-decoration: underline;
+    margin-right: 16px;
+}
