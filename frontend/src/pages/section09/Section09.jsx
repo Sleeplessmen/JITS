@@ -6,8 +6,9 @@ const Section09 = () => {
     return (
         <div className={styles.container}>
             <ProblemCard title="Problem 1: Save and display last visit time in the footer">
-                <strong>Solution:</strong>
-                <Tooltip text="Scroll down to the bottom of the page to see the footer. The 'Last visit' section will be highlighted in yellow when you click this link.">
+                <strong>Solution:</strong> Use the browser's localStorage to save the last visit time and display it in the footer. The footer should have a section that highlights the last visit time in yellow when clicked.
+                <br />
+                <Tooltip text="Scroll down to the bottom of the page to see the footer.">
                     <a
                         href="#footer-last-visit"
                         className={styles.footerLink}

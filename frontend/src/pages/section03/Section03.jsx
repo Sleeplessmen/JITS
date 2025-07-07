@@ -3,18 +3,25 @@ import ProductList from "../../components/section03/ProductList";
 import ProductForm from "../../components/section03/ProductForm";
 import { useState, useEffect } from "react";
 import ProductRepository from "../../repositories/ProductRepository";
-import { message, Spin } from "antd";
-// This component manages the product section of the application.
-// It fetches products from the API, allows adding new products, and displays them in a list.
-// It uses the ProductRepository to handle API interactions and manages loading states for better user experience.
-// It also handles error messages using Ant Design's message component for better user feedback.
-// This component is part of the Section03 page, which focuses on product management.
-// It includes a form for adding new products and a list to display existing products.
-// This file is part of the frontend/src/pages/section03 directory, which contains components related to Section 03 of the application.
+
+import {
+    CircularProgress,
+    Snackbar,
+    Alert,
+    Backdrop,
+    Box,
+} from "@mui/material";
+
 export default function Section03() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [addingProduct, setAddingProduct] = useState(false);
+
+    const [snackbar, setSnackbar] = useState({
+        open: false,
+        message: "",
+        severity: "success", // success | error | warning | info
+    });
 
     useEffect(() => {
         setLoading(true);
@@ -22,20 +29,28 @@ export default function Section03() {
             .then(setProducts)
             .catch((err) => {
                 console.error("Failed to load products:", err);
-                message.error(`Error loading products: ${err.message}`);
+                showSnackbar(`Error loading products: ${err.message}`, "error");
             })
             .finally(() => setLoading(false));
     }, []);
+
+    const showSnackbar = (message, severity = "success") => {
+        setSnackbar({ open: true, message, severity });
+    };
+
+    const handleCloseSnackbar = () => {
+        setSnackbar((prev) => ({ ...prev, open: false }));
+    };
 
     async function handleAddProduct(newProduct) {
         setAddingProduct(true);
         try {
             const added = await ProductRepository.create(newProduct);
             setProducts((prev) => [...prev, added]);
-            message.success("Product added successfully!");
+            showSnackbar("Product added successfully!", "success");
         } catch (err) {
             console.error("Failed to add product:", err);
-            message.error(`Failed to add product: ${err.message}`);
+            showSnackbar(`Failed to add product: ${err.message}`, "error");
         } finally {
             setAddingProduct(false);
         }
@@ -44,17 +59,30 @@ export default function Section03() {
     return (
         <div className={styles.container}>
             {loading ? (
-                <div style={{ textAlign: 'center', padding: '20px' }}>
-                    <Spin size="large" tip="Loading products..." />
-                </div>
+                <Box display="flex" justifyContent="center" alignItems="center" p={4}>
+                    <CircularProgress size={40} />
+                </Box>
             ) : (
                 <>
-                    <Spin spinning={addingProduct} tip="Adding product...">
-                        <ProductForm onAddProduct={handleAddProduct} />
-                    </Spin>
+                    <Backdrop open={addingProduct} sx={{ zIndex: 1000, color: "#fff" }}>
+                        <CircularProgress color="inherit" />
+                    </Backdrop>
+
+                    <ProductForm onAddProduct={handleAddProduct} />
                     <ProductList products={products} />
                 </>
             )}
+
+            <Snackbar
+                open={snackbar.open}
+                autoHideDuration={4000}
+                onClose={handleCloseSnackbar}
+                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+            >
+                <Alert severity={snackbar.severity} onClose={handleCloseSnackbar} sx={{ width: "100%" }}>
+                    {snackbar.message}
+                </Alert>
+            </Snackbar>
         </div>
     );
 }

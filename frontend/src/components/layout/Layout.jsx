@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import styles from './Layout.module.css'; // ✅ Import CSS module
 
-export default function Layout() {
+export default function Layout({ theme, toggleTheme }) {
     const [open, setOpen] = useState(false);
     const menuRef = useRef(null);
     const [lastVisit, setLastVisit] = useState(null);
@@ -15,14 +18,13 @@ export default function Layout() {
         localStorage.setItem("lastVisit", now);
     }, []);
 
-    // Close on outside click
+    // Đóng menu khi click bên ngoài
     useEffect(() => {
         function handleClickOutside(event) {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
                 setOpen(false);
             }
         }
-
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
@@ -32,8 +34,8 @@ export default function Layout() {
         return (
             <li key={num}>
                 <Link
-                    to={`/section${num.toLowerCase()}`}
-                    className="dropdownLink"
+                    to={`/section${num}`}
+                    className={styles.dropdownLink} // ✅ module
                     onClick={() => setOpen(false)}
                 >
                     Practice Exercise {num}
@@ -43,27 +45,34 @@ export default function Layout() {
     });
 
     return (
-        <div className="appContainer">
-            <header className="header">
-                <nav className="navbar">
-                    <div className="menuWrapper" ref={menuRef}>
+        <div className={styles.appContainer}>
+            <header className={styles.header}>
+                <nav className={styles.navbar}>
+                    <div className={styles.menuWrapper} ref={menuRef}>
                         <button
-                            className="menuButton"
+                            className={styles.menuButton}
                             onClick={() => setOpen(prev => !prev)}
                             aria-label="Toggle Menu"
                         >
                             ☰ Menu
                         </button>
-                        {open && <ul className="dropdownMenu">{sections}</ul>}
+                        {open && <ul className={styles.dropdownMenu}>{sections}</ul>}
                     </div>
+                    <button
+                        className={`${styles.themeToggleButton} ${theme === 'dark' ? styles.darkMode : styles.lightMode}`}
+                        onClick={toggleTheme}
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+                    </button>
                 </nav>
             </header>
 
-            <main className="main">
+            <main className={styles.main}>
                 <Outlet />
             </main>
 
-            <footer className="footer">
+            <footer className={styles.footer}>
                 © 2025 Nguyen Cong Khai
                 <br />
                 {lastVisit && (

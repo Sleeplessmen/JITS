@@ -1,0 +1,16 @@
+:root {
+  --font-body: 'Inter', sans-serif;
+
+  --color-text: hsl(208, 37%, 20%);
+  --color-background: #ffffff;
+  --color-link: #1e40af;
+  --color-link-hover: #2563eb;
+
+  --line-height-base: 1.5;
+  --font-weight-base: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

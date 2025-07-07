@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Section01 from "./pages/section01/Section01";
-import Section02 from "./pages/section02/Section02";
-import Section03 from "./pages/section03/Section03";
-import Section04 from "./pages/section04/Section04";
-import './App.css';
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home/Home";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 
 // Lazy load all dynamic pages
+const Section01 = lazy(() => import('./pages/section01/Section01'));
+const Section02 = lazy(() => import('./pages/section02/Section02'));
+const Section03 = lazy(() => import('./pages/section03/Section03'));
+const Section04 = lazy(() => import('./pages/section04/Section04'));
 const Section05 = lazy(() => import('./pages/section05/Section05'));
 const Section06 = lazy(() => import('./pages/section06/Section06'));
 const Section07 = lazy(() => import('./pages/section07/Section07'));
@@ -35,11 +34,26 @@ function LoadingIndicator() {
 }
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
+
   return (
     <Router>
       <Suspense fallback={<LoadingIndicator />}>
         <Routes>
-          <Route element={<Layout />}>
+          <Route element={<Layout theme={theme} toggleTheme={toggleTheme} />}>
             <Route path="/" element={<Home />} />
             <Route path="/section01" element={<Section01 />} />
             <Route path="/section02" element={<Section02 />} />

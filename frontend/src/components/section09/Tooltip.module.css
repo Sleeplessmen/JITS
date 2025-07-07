@@ -8,9 +8,9 @@
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background: #fff;
-    color: #222;
-    border: 1px solid #bbb;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     padding: 6px 12px;
     border-radius: 4px;
     white-space: pre-line;

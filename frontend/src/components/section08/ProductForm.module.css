@@ -23,9 +23,9 @@ div {
 }
 
 label {
-    color: var(--text-color);
     font-weight: 500;
     margin-bottom: 0.25rem;
+    color: var(--text-color);
 }
 
 input {
@@ -63,10 +63,10 @@ textarea {
 }
 
 button {
-    color: var(--text-color);
     align-self: flex-end;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    color: var(--text-color);
     background-color: #2563eb;
     border: none;
     border-radius: 6px;
