@@ -8,13 +8,14 @@
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--bg-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--color-surface, #ffffff);
+    color: var(--color-text, #222222);
+    border: 1px solid var(--color-border, #dddddd);
     padding: 6px 12px;
     border-radius: 4px;
     white-space: pre-line;
     font-size: 0.95rem;
+    line-height: var(--line-height-base, 1.5);
     z-index: 10;
     opacity: 0.98;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);

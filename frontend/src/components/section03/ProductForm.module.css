@@ -2,19 +2,20 @@
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    /* outline: 1px solid red; */
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 .productForm h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--color-text);
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* outline: 1px solid red; */
 }
 
 div {
@@ -23,57 +24,48 @@ div {
 }
 
 label {
-    color: var(--text-color);
+    color: var(--color-text);
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
 
-input {
+input,
+textarea {
     padding: 0.5rem 0.75rem;
     font-size: 1rem;
-    border: 1px solid #d1d5db;
+    font-family: var(--font-body, Arial, sans-serif);
+    border: 1px solid var(--color-border);
     border-radius: 6px;
-    background-color: #fff;
-    transition: border-color 0.2s;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color 0.2s, background-color 0.2s;
 }
 
-input:focus {
-    outline: none;
-    border-color: #2563eb;
-}
-
+input:focus,
 textarea:focus {
     outline: none;
-    border-color: #2563eb;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    border-color: var(--color-link-hover);
 }
 
 textarea {
     max-width: 500px;
     min-height: 200px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 0.5rem 0.75rem;
+    resize: vertical;
 }
 
 button {
-    color: var(--text-color);
     align-self: flex-end;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #2563eb;
+    font-weight: 500;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    background-color: var(--color-button);
+    color: #fff;
     transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #1e40af;
+    background-color: var(--color-button-hover);
 }

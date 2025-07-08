@@ -3,4 +3,7 @@
     flex-direction: column;
     flex: 1;
     min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body, sans-serif);
 }

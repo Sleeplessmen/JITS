@@ -1,0 +1,90 @@
+.productList .container {
+    flex: 1;
+    padding: 20px;
+}
+
+.productList .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.productList table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-text);
+}
+
+.productList table th,
+.productList table td {
+    border: 1px solid var(--color-border);
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.productList table th {
+    background-color: var(--color-theme-light);
+    font-weight: 600;
+}
+
+/* Center the Actions heading and cells */
+.productList table th.actions,
+.productList table td.actions {
+    text-align: center;
+}
+
+.productList table tr:hover {
+    background-color: var(--color-button-hover);
+    /* hoặc tạo thêm: --color-table-hover nếu cần */
+}
+
+.noProducts {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-muted-text, #6b7280);
+}
+
+.noProducts h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-muted-strong, #374151);
+}
+
+.noProducts p {
+    font-size: 0.95rem;
+}
+
+/* Action buttons */
+.actionBtn {
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.2s;
+    color: #fff;
+}
+
+.updateBtn {
+    background-color: var(--color-warning, #ff9800);
+}
+
+.updateBtn:hover {
+    background-color: var(--color-warning-hover, #fb8c00);
+}
+
+.deleteBtn {
+    background-color: var(--color-danger, #f44336);
+}
+
+.deleteBtn:hover {
+    background-color: var(--color-danger-hover, #d32f2f);
+}

@@ -2,19 +2,18 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--bg-color);
-    font-family: sans-serif;
-    box-sizing: border-box;
+    background-color: var(--color-background);
+    font-family: var(--font-body);
     overflow-x: hidden;
 }
 
 .header {
     position: sticky;
     top: 0;
-    background-color: var(--bg-color);
+    background-color: var(--color-background);
     z-index: 1000;
     padding: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--color-border);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -31,15 +30,15 @@
 
 .menuButton {
     padding: 0.5rem 1rem;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
     border-radius: 4px;
     cursor: pointer;
 }
 
 .menuButton:hover {
-    background-color: #ddd;
+    background-color: var(--color-button-hover);
 }
 
 .dropdownMenu {
@@ -51,9 +50,9 @@
     top: 100%;
     left: 0;
     margin-top: 0.25rem;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
+    background-color: var(--color-dropdown-bg);
+    color: var(--color-dropdown-text);
+    border: 1px solid var(--color-dropdown-border);
     border-radius: 6px;
     padding: 0.75rem 1rem;
     list-style: none;
@@ -62,12 +61,13 @@
 
 .dropdownLink {
     text-decoration: none;
-    color: black;
+    color: var(--color-dropdown-text);
     font-weight: 500;
 }
 
 .dropdownLink:hover {
-    color: gray;
+    opacity: 0.8;
+    /* thay vì hardcoded gray */
 }
 
 .themeToggleButton {
@@ -79,20 +79,20 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .lightMode {
-    background-color: #f5f5f5;
-    color: #222;
+    background-color: var(--color-theme-light);
+    color: var(--color-text);
 }
 
 .darkMode {
-    background-color: #333;
-    color: #eee;
+    background-color: var(--color-theme-dark);
+    color: var(--color-text);
 }
 
 .main {
@@ -100,13 +100,12 @@
     flex: 1;
     flex-wrap: wrap;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .footer {
     width: 100%;
     padding: 20px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--color-border);
     margin-top: auto;
     text-align: center;
     font-size: 14px;

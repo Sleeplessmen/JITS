@@ -1,32 +1,44 @@
 .container {
     max-width: 600px;
-    margin: 32px auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
     font-size: 1.1rem;
+    font-family: var(--font-body, sans-serif);
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 .heading {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
 .problemBlock {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .problemTitle {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1.125rem;
 }
 
 .footerLink {
-    font-weight: bold;
-    background: #ffe082;
+    font-weight: 600;
+    background-color: var(--color-highlight, #ffe082);
     padding: 2px 8px;
     border-radius: 4px;
     text-decoration: none;
-    color: #333;
+    color: var(--color-highlight-text, #333);
+}
+
+.footerLink:hover {
+    opacity: 0.85;
 }
 
 .devtoolsLink {
-    color: #1976d2;
+    color: var(--color-link, #1976d2);
     text-decoration: underline;
-    margin-right: 16px;
+    margin-right: 1rem;
 }

@@ -6,27 +6,29 @@
 .productList .heading {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--color-text);
 }
 
 .productList table {
     width: 100%;
     border-collapse: collapse;
+    color: var(--color-text);
 }
 
 .productList table th,
 .productList table td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     padding: 12px 16px;
     text-align: left;
 }
 
 .productList table th {
-    background-color: #f0f0f0;
+    background-color: var(--color-theme-light);
     font-weight: 600;
 }
 
 .productList table tr:hover {
-    background-color: #f9f9f9;
+    background-color: var(--color-button-hover);
 }
 
 .noProducts {
@@ -35,15 +37,13 @@
     flex: 1;
     text-align: center;
     padding: 2rem;
-    color: #6b7280;
-    /* outline: 1px solid red; */
-
+    color: var(--color-muted-text, #6b7280);
 }
 
 .noProducts h2 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #374151;
+    color: var(--color-text-muted-strong, #374151);
 }
 
 .noProducts p {

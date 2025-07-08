@@ -5,6 +5,15 @@
   --color-background: #ffffff;
   --color-link: #1e40af;
   --color-link-hover: #2563eb;
+  --color-border: #dddddd;
+
+  --color-button-hover: #dddddd;
+  --color-dropdown-bg: #ffffff;
+  --color-dropdown-text: #000000;
+  --color-dropdown-border: #cccccc;
+
+  --color-theme-light: #f5f5f5;
+  --color-theme-dark: #333333;
 
   --line-height-base: 1.5;
   --font-weight-base: 400;
@@ -13,4 +22,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-input-focus: #2563eb;
+  --color-button-bg: #2563eb;
+  --color-button-hover: #1e40af;
+
+  --color-warning: #ff9800;
+  --color-warning-hover: #fb8c00;
+  --color-danger: #f44336;
+  --color-danger-hover: #d32f2f;
+
+  --color-muted-text: #6b7280;
+  --color-text-muted-strong: #374151;
+
+  --color-highlight: #ffe082;
+  --color-highlight-text: #333333;
 }

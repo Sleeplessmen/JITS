@@ -1,8 +1,10 @@
 .container {
-    /* outline: 1px solid red; */
     display: flex;
     flex: 1;
     flex-direction: row;
     align-items: flex-start;
     min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body, sans-serif);
 }
