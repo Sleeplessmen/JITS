@@ -1,5 +1,11 @@
-import styles from "./styles.module.css";
-
+import styles from "./ModalConfirm.module.css";
+/**
+ * ModalConfirm component for confirmation dialogs
+ * @param {Object} props - Component properties
+ * @param {string} props.message - Confirmation message to display
+ * @param {function} props.onConfirm - Function to call when user confirms
+ * @param {function} props.onCancel - Function to call when user cancels
+ */
 export default function ModalConfirm({ message, onConfirm, onCancel }) {
     return (
         <div className={styles.overlay}>

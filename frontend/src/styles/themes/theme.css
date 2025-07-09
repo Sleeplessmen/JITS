@@ -27,6 +27,12 @@
 
     --color-highlight: #ffe082;
     --color-highlight-text: #333333;
+
+    --color-confirm-bg: #22c55e;
+    --color-confirm-bg-hover: #16a34a;
+
+    --color-cancel-bg: #9ca3af;
+    --color-cancel-bg-hover: #6b7280;
 }
 
 [data-theme="dark"] {
@@ -59,4 +65,9 @@
     --color-highlight: #ffb74d;
     --color-highlight-text: #1a1a1a;
 
+    --color-confirm-bg: #4ade80;
+    --color-confirm-bg-hover: #22c55e;
+
+    --color-cancel-bg: #6b7280;
+    --color-cancel-bg-hover: #4b5563;
 }

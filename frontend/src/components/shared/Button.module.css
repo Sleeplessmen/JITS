@@ -1,0 +1,15 @@
+.btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-link-hover);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius, 6px);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-link);
+}

@@ -37,4 +37,12 @@
 
   --color-highlight: #ffe082;
   --color-highlight-text: #333333;
+
+  --color-confirm-bg: #22c55e;
+  --color-confirm-bg-hover: #16a34a;
+
+  --color-cancel-bg: #9ca3af;
+  --color-cancel-bg-hover: #6b7280;
+
+  --radius: 6px;
 }

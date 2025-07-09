@@ -1,5 +1,5 @@
 import styles from "./Section08.module.css";
-import ProductList from "../../components/section03/ProductList";
+import ProductList from "../../components/section08/ProductList";
 import ProductForm from "../../components/section08/ProductForm";
 import { useState, useEffect } from "react";
 import ProductRepository from "../../repositories/ProductRepository";
@@ -12,7 +12,7 @@ import {
     Box,
 } from "@mui/material";
 
-export default function Section03() {
+export default function Section08() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [addingProduct, setAddingProduct] = useState(false);
