@@ -1,0 +1,20 @@
+.container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body, sans-serif);
+    line-height: 1.6;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--color-muted-text, #666);
+}

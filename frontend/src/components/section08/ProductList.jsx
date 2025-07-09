@@ -44,7 +44,6 @@ export default function ProductList({ products }) {
                         {hasSearchTerm ? (
                             <>
                                 <h2>No products found for "{searchTerm}"</h2>
-                                <p>Please try a different search term.</p>
                             </>
                         ) : (
                             <>

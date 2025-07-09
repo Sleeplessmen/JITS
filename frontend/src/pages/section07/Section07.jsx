@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Button } from '@mui/material';
+import styles from './Section07.module.css';
 
 const Section07 = () => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16, margin: 32 }}>
+    <div className={styles.container}>
         <Button component={Link} to="/products" endIcon={<ArrowForwardIcon />}>
             Go to Products
         </Button>

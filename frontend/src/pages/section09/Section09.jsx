@@ -6,7 +6,7 @@ const Section09 = () => {
     return (
         <div className={styles.container}>
             <ProblemCard title="Problem 1: Save and display last visit time in the footer">
-                <strong>Solution:</strong> Use the browser's localStorage to save the last visit time and display it in the footer. The footer should have a section that highlights the last visit time in yellow when clicked.
+                <strong>Solution:</strong> Use the browser's localStorage to save the last visit time and display it in the footer.
                 <br />
                 <Tooltip text="Scroll down to the bottom of the page to see the footer.">
                     <a
@@ -26,7 +26,7 @@ const Section09 = () => {
                             }
                         }}
                     >
-                        See the last visit display in the footer
+                        Guide to see the 'last visit' display in the footer
                     </a>
                 </Tooltip>
             </ProblemCard>
