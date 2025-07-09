@@ -72,21 +72,19 @@ export default function Section04() {
 
     return (
         <div className={styles.container}>
-            {/* Loading Indicator */}
+
             {loading && (
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100px' }}>
                     <CircularProgress />
                 </Box>
             )}
 
-            {/* Initial Fetch Error Alert (displayed prominently) */}
             {!loading && error && (
                 <Alert severity="error" onClose={() => setError(null)} sx={{ mb: 2 }}>
                     Error loading products: {error.message}
                 </Alert>
             )}
 
-            {/* Product List (conditionally rendered after loading and without initial fetch error) */}
             {!loading && !error && (
                 <ProductList
                     products={products}
@@ -95,7 +93,6 @@ export default function Section04() {
                 />
             )}
 
-            {/* Product Edit Modal */}
             {editingProduct && (
                 <ProductEditModal
                     product={editingProduct}
@@ -104,7 +101,6 @@ export default function Section04() {
                 />
             )}
 
-            {/* Action-specific Error Snackbar (for update/delete failures) */}
             <Snackbar
                 open={!!actionError}
                 autoHideDuration={6000}

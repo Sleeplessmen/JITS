@@ -1,13 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './ProductEditModal.module.css';
-/**
- * ProductEditModal component allows editing of a product's details.
- * @param {Object} param0 - Component props
- * @param {Object} param0.product - The product to edit
- * @param {Function} param0.onSave - Callback function to save the edited product
- * @param {Function} param0.onClose - Callback function to close the modal
- * @returns {JSX.Element} The rendered component
- */
+
 export default function ProductEditModal({ product, onSave, onClose }) {
     const [form, setForm] = useState({ name: '', price: '', description: '' });
 
@@ -29,40 +22,47 @@ export default function ProductEditModal({ product, onSave, onClose }) {
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <h2>Edit Product</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Name:
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="name">Name:</label>
                         <input
+                            id="name"
                             name="name"
                             value={form.name}
                             onChange={handleChange}
                             required
                         />
-                    </label>
-                    <label>
-                        Price:
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="price">Price:</label>
                         <input
+                            id="price"
                             name="price"
                             type="number"
                             value={form.price}
                             onChange={handleChange}
                             required
                         />
-                    </label>
-                    <label>
-                        Description:
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="description">Description:</label>
                         <textarea
+                            id="description"
                             name="description"
                             value={form.description}
                             onChange={handleChange}
                             required
                         />
-                    </label>
+                    </div>
+
                     <div className={styles.actions}>
                         <button type="submit">Save</button>
                         <button type="button" onClick={onClose}>Cancel</button>
                     </div>
                 </form>
+
             </div>
         </div>
     );
